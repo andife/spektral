@@ -113,7 +113,7 @@ At the same time, if we split the graph into batches we may end up in a situatio
 Finally, we used `train_mask` and `val_mask` as `sample_weight`.   
 This means that, during training, the training nodes will have a weight of 1 and the validation nodes will have a weight of 0. Then, in validation, we will set the training nodes to have a weight of 0 and the validation nodes to have a weight of 1. 
 
-This is all that we need to do to differentiate between training and test data. See how the model takes as input the full `X`, `A`, and `y` for both training and valdation? The only thing that changes is the mask. This is also why we used the `weighted_metrics` keyword when compiling the model, so that our accuracy is calculated only on the correct nodes at each phase. 
+This is all that we need to do to differentiate between training and test data. See how the model takes as input the full `X`, `A`, and `y` for both training and validation? The only thing that changes is the mask. This is also why we used the `weighted_metrics` keyword when compiling the model, so that our accuracy is calculated only on the correct nodes at each phase. 
 
 ## Evaluating the model
 
